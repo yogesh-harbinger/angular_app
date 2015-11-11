@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 ng-show="vm.recordFound" class="page-head-line">{{vm.userData.name}}</h4>
+            <h4 ng-show="!vm.recordFound" class="page-head-line">No Record Found</h4>
+        </div>
+    </div>
+    <div class="row" ng-show="vm.recordFound">
+        <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                Address:
+                {{vm.userData.address.street_address}},
+                {{vm.userData.address.city}},
+                {{vm.userData.address.region}},
+                {{vm.userData.address.country}}
+                </h3>
+            </div>
+            <div class="panel-body">
+              <!-- Following is the container of map-->
+              <map></map>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

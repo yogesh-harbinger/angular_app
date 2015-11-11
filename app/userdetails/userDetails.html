@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 ng-show="vm.recordFound" class="page-head-line">{{vm.userDataSet.name}}</h4>
+            <h4 ng-show="!vm.recordFound" class="page-head-line">No Record Found</h4>
+        </div>
+    </div>
+    <div class="row" ng-show="vm.recordFound">
+        <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Details</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center">
+                <div ng-if="vm.userDataSet.gender=='male'">
+                <img alt="User Pic" src="assets/img/profile-pic-main-male.png" class="img-circle img-responsive">
+                </div>
+                <div ng-if="vm.userDataSet.gender=='female'">
+                <img alt="User Pic" src="assets/img/profile-pic-main-female.png" class="img-circle img-responsive">
+                </div>
+                </div>
+
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                    <tbody>
+                        <tr>
+                            <td>Name:</td>
+                            <td>{{vm.userDataSet.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{vm.userDataSet.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone #</td>
+                            <td>{{vm.userDataSet.phone_number}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>{{vm.userDataSet.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>
+                                <address>
+                                    {{vm.userDataSet.address.street_address}},<br>
+                                    {{vm.userDataSet.address.city}},<br>
+                                    {{vm.userDataSet.address.region}},<br>
+                                    {{vm.userDataSet.address.country}}<br>
+                                </address><br>
+                                <b>View Location on Map:</b> <a title="View on Map" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" ng-href="#/usermap/{{vm.userDataSet.id}}"><i class="glyphicon glyphicon-map-marker"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
